@@ -1,1 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌐 Applications</title>
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,0.06);
+      --text: #eaf0ff;
+      --muted: rgba(234,240,255,0.75);
+      --line: rgba(234,240,255,0.15);
+      --btn: #4f7cff;
+      --btn-hover: #3b66ea;
+      --shadow: 0 12px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --max: 900px;
+    }
 
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(79,124,255,0.25), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(0,255,180,0.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      padding: 48px 18px;
+    }
+
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    h1{
+      font-size: 2.2rem;
+      margin: 0 0 18px 0;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle{
+      font-size: 1.2rem;
+      margin: 0 0 10px 0;
+    }
+
+    .intro{
+      color: var(--muted);
+      margin: 0 0 28px 0;
+      line-height: 1.6;
+    }
+
+    hr{
+      border: none;
+      height: 1px;
+      background: var(--line);
+      margin: 26px 0;
+    }
+
+    .section{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .section h2{
+      margin: 0 0 12px 0;
+      font-size: 1.35rem;
+    }
+
+    .section p{
+      margin: 0 0 12px 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .hint{
+      margin-top: 10px;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .btn{
+      display: inline-block;
+      text-decoration: none;
+      background: var(--btn);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.08s ease, background 0.15s ease;
+    }
+
+    .btn:hover{
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:active{
+      transform: translateY(0px);
+    }
+
+    .footer-note{
+      margin-top: 22px;
+      font-size: 0.95rem;
+      color: rgba(234,240,255,0.55);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Titre -->
+    <h1>🌐 Applications</h1>
+
+    <!-- Infos -->
+    <h2 class="subtitle">Bienvenue sur la page d'accueil des applications ! 👋</h2>
+    <p class="intro">Vous trouverez sur cette page les liens d'accès aux applications.</p>
+
+    <hr />
+
+    <!-- ========== ANALYSE DE SITE ========== -->
+    <div class="section">
+      <h2>🗺️ Analyse de site</h2>
+      <p>
+        Cette application a été conçue pour automatiser partiellement la tâche d'analyse de site.
+        À partir d'une adresse, vous obtiendrez des informations sur l'emplacement du site telles que
+        des informations pratiques, des données d'urbanisme, climatiques, ou encore topographiques.
+      </p>
+      <p class="hint">Pour y accéder, cliquez sur le bouton ci-dessous.</p>
+
+      <a class="btn" href="http://192.168.0.10:8501" target="_blank" rel="noopener noreferrer">
+        Accéder à l'application
+      </a>
+    </div>
+
+    <hr />
+
+    <!-- ========== APPAREILS SANITAIRES ========== -->
+    <div class="section">
+      <h2>🚰 Appareils sanitaires</h2>
+      <p>
+        Cette application a été conçue pour détecter automatiquement des appareils sanitaires sur des plans
+        et permet de vérifier la distance de ces appareils par rapport aux gaines techniques.
+        Vous pourrez également entraîner et enrichir le modèle de détection et trouverez des outils pour l'annotation de plans.
+      </p>
+      <p class="hint">Pour y accéder, cliquez sur le bouton ci-dessous.</p>
+
+      <a class="btn" href="http://192.168.0.10:8502" target="_blank" rel="noopener noreferrer">
+        Accéder à l'application
+      </a>
+    </div>
+
+    <hr />
+
+    <!-- ========== ETUDES RE2020 ========== -->
+    <div class="section">
+      <h2>📝 Etudes RE2020</h2>
+      <p>
+        Cette application a été conçue pour rédiger automatiquement les études RE2020
+        à partir de la sortie Pléiades d'un projet. En téléversant la sortie logiciel et le RSEE,
+        vous obtiendrez une étude RE2020 partiellement rédigée, qu'il ne vous restera plus qu'à compléter.
+      </p>
+      <p class="hint">Pour y accéder, cliquez sur le bouton ci-dessous.</p>
+
+      <a class="btn" href="http://192.168.0.10:8503" target="_blank" rel="noopener noreferrer">
+        Accéder à l'application
+      </a>
+    </div>
+
+    <p class="footer-note">
+      ⚠️ Note : les liens en <code>192.168.x.x</code> ne fonctionneront que si vous êtes sur le même réseau local.
+    </p>
+
+  </div>
+</body>
+</html>
