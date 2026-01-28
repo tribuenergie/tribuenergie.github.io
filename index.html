@@ -38,6 +38,14 @@
       font-size: 2.2rem;
       margin: 0 0 18px 0;
       letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* place le texte à gauche et le logo à droite */
+    }
+
+    h1 img {
+      width: 250px;   /* taille du logo */
+      height: auto;
     }
 
     .subtitle{
@@ -115,7 +123,10 @@
   <div class="container">
 
     <!-- Titre -->
-    <h1>🌐 Applications TRIBU ENERGIE</h1>
+    <h1>
+      🌐 Applications
+      <img src="Logo_TE.png" alt="Logo TRIBU ENERGIE">
+    </h1>
 
     <!-- Infos -->
     <h2 class="subtitle">Bienvenue sur la page d'accueil des applications ! 👋</h2>
