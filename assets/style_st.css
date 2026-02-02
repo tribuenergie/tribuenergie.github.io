@@ -687,3 +687,20 @@ div[data-testid="stTooltipHoverTarget"] > div{
   padding: 6px 10px !important;
   box-shadow: 0 10px 22px rgba(0,0,0,0.20) !important;
 }
+
+/* Fond pour le contenu de l'expander */
+div[data-testid="stExpander"] details {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* vert */
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* Quand l'expander est ouvert */
+div[data-testid="stExpander"] details[open] {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* bleu */
+}
+
+div[data-testid="stExpander"] details[open] summary {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* bleu un peu plus foncé */
+    color: white !important;
+}
