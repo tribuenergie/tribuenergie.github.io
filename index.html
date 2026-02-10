@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TE - Applications</title>
+  <link rel="icon" href="assets/icone.png" type="image/png">
+  <link rel="stylesheet" href="assets/style_html.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Titre -->
+    <h1>
+      🌐 Applications
+      <img src="images/Logo_TE.png" alt="Logo TRIBU ENERGIE">
+    </h1>
+
+    <!-- Infos -->
+    <h2 class="subtitle">Bienvenue sur la page d'accueil des applications ! 👋</h2>
+    <p class="intro">Vous trouverez sur cette page les liens d'accès aux applications.</p>
+
+    <hr />
+
+    <!-- ========== ANALYSE DE SITE ========== -->
+    <div class="section">
+      <h2>🗺️ Analyse de site</h2>
+      <p>
+        Cette application a été conçue pour automatiser partiellement la tâche d'analyse de site.
+        À partir d'une adresse, vous obtiendrez des informations sur l'emplacement du site telles que
+        des informations pratiques, des données d'urbanisme, climatiques, ou encore topographiques.
+      </p>
+      <p class="hint">Pour y accéder, cliquez sur le bouton ci-dessous.</p>
+
+      <a class="btn" id="link1" target="_blank" rel="noopener noreferrer">
+        Accéder à l'application
+      </a>
+    </div>
+
+    <hr />
+
+    <!-- ========== APPAREILS SANITAIRES ========== -->
+    <div class="section">
+      <h2>🚰 Appareils sanitaires</h2>
+      <p>
+        Cette application a été conçue pour détecter automatiquement des appareils sanitaires sur des plans
+        et vérifier la distance de ces appareils par rapport aux gaines techniques.
+      </p>
+      <a class="btn" id="link2" target="_blank" rel="noopener noreferrer">
+        Accéder à l'application
+      </a>
+    </div>
+
+    <hr />
+
+    <!-- ========== ETUDES RE2020 ========== -->
+    <div class="section">
+      <h2>📝 Etudes RE2020 <span class="coming-soon">À venir</span></h2>
+      <p>
+        Cette application sera bientôt disponible pour rédiger semi-automatiquement les études RE2020
+        à partir de la sortie Pléiades d'un projet.
+      </p>
+
+      <a class="btn disabled" href="#" onclick="return false;">
+        Accès indisponible
+      </a>
+    </div>
+
+
+    <p class="footer-note">
+      ⚠️ Note : les liens vers les applications ne fonctionneront que si vous êtes sur le même réseau local.
+    </p>
+
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script>
+  document.getElementById("link1").href = URLS.app1;
+  document.getElementById("link2").href = URLS.app2;
+  document.getElementById("link3").href = URLS.app3;
+  </script>
+
+</body>
+</html>
