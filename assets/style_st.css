@@ -1,0 +1,706 @@
+:root{
+  --bg: #0b1220;
+  --card: rgba(255,255,255,0.06);
+  --text: #ffffffc9;           /* texte principal très clair */
+  --muted: rgba(255,255,255,0.85); /* texte secondaire légèrement moins intense */
+  --line: rgba(234,240,255,0.15);
+  --btn: #4f7cff;
+  --btn-hover: #3b66ea;
+  --shadow: 0 12px 30px rgba(0,0,0,0.35);
+  --radius: 16px;
+}
+
+/* Fond */
+.stApp{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(79,124,255,0.25), transparent 60%),
+              radial-gradient(900px 500px at 80% 10%, rgba(0,255,180,0.12), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: var(--text) !important;
+}
+
+/* Texte */
+p, li, span, label {
+  color: var(--muted) !important;
+}
+
+/* Containers (cartes) */
+div[data-testid="stVerticalBlockBorderWrapper"]{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* File uploader */
+div[data-testid="stFileUploader"]{
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Boutons */
+.stButton > button, .stDownloadButton > button {
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.stButton > button:hover, .stDownloadButton > button:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+.stButton > button:active, .stDownloadButton > button:active{
+  transform: translateY(0px);
+}
+
+/* Séparateur */
+hr{
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 22px 0;
+}
+
+/* Enlève la barre blanche du haut (header Streamlit) */
+header[data-testid="stHeader"]{
+  background: transparent !important;
+}
+
+/* Enlève aussi la bordure/ombre du header */
+header[data-testid="stHeader"]::after{
+  background: transparent !important;
+}
+
+/* Optionnel : retire le padding du haut */
+.stApp{
+  padding-top: 0rem;
+}
+
+/* Bouton interne du file_uploader */
+div[data-testid="stFileUploader"] button{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+div[data-testid="stFileUploader"] button:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+div[data-testid="stFileUploader"] button:active{
+  transform: translateY(0px);
+}
+
+div[data-testid="stFileUploader"] * button{
+  background: var(--btn) !important;
+  color: white !important;
+}
+
+/* Bouton "Browse files" du file_uploader (Streamlit/BaseWeb) */
+div[data-testid="stFileUploader"] [role="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+}
+
+div[data-testid="stFileUploader"] [role="button"]:hover{
+  background: var(--btn-hover) !important;
+}
+
+div[data-testid="stFileUploader"] button[data-baseweb="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+div[data-testid="stFileUploader"] button[data-baseweb="button"]:hover{
+  background: var(--btn-hover) !important;
+}
+
+div[data-testid="stFileUploader"] label{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+}
+
+div[data-testid="stFileUploader"] label:hover{
+  background: var(--btn-hover) !important;
+}
+
+/* Texte du drag and drop */
+div[data-testid="stFileUploader"] .css-1t33j5u,  /* Classe variable selon version */
+div[data-testid="stFileUploader"] label span {
+    color: var(--muted) !important;
+    font-weight: 500;
+}
+
+/* Optionnel : modifier l’arrière-plan du drag/drop */
+div[data-testid="stFileUploader"] > div {
+    background: var(--card) !important;
+}
+
+div[data-testid="stFileUploader"] label span{
+    color: #eaf0ff !important;
+    font-size: 0.95rem;
+}
+
+div[data-testid="stFileUploader"] label::after {
+    color: var(--muted) !important;
+}
+
+/* Texte "Drag and drop file here / Limit 200MB..." */
+div[data-testid="stFileUploader"] label,
+div[data-testid="stFileUploader"] label span {
+    color: var(--muted) !important;  /* texte clair pour fond sombre */
+    font-weight: 500;
+}
+
+/* Optionnel : augmenter la taille pour plus de lisibilité */
+div[data-testid="stFileUploader"] label span {
+    font-size: 0.95rem !important;
+}
+
+/* Link buttons (st.link_button) */
+div[data-testid="stLinkButton"] a{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+div[data-testid="stLinkButton"] a:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+div[data-testid="stLinkButton"] a:active{
+  transform: translateY(0px);
+}
+
+/* ================================
+   FILE UPLOADER (st.file_uploader)
+   ================================ */
+
+/* Conteneur global */
+div[data-testid="stFileUploader"]{
+  background: var(--card) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Zone drag & drop */
+div[data-testid="stFileUploader"] section{
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px dashed rgba(255,255,255,0.18) !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+}
+
+/* Texte "Drag and drop file here" + limite */
+div[data-testid="stFileUploader"] section *{
+  color: var(--muted) !important;
+  font-weight: 500 !important;
+}
+
+/* Bouton Browse files / Parcourir */
+div[data-testid="stFileUploader"] button,
+div[data-testid="stFileUploader"] [role="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+/* Hover bouton */
+div[data-testid="stFileUploader"] button:hover,
+div[data-testid="stFileUploader"] [role="button"]:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Active bouton */
+div[data-testid="stFileUploader"] button:active,
+div[data-testid="stFileUploader"] [role="button"]:active{
+  transform: translateY(0px);
+}
+
+/* Effet focus (quand on clique / tab) */
+div[data-testid="stFileUploader"] button:focus,
+div[data-testid="stFileUploader"] [role="button"]:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(79,124,255,0.35) !important;
+}
+
+/* Nom du fichier uploadé */
+div[data-testid="stFileUploader"] ul li{
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+
+/* Supprime le fond blanc parfois présent autour */
+div[data-testid="stFileUploader"] > div{
+  background: transparent !important;
+}
+
+/* ================================
+   st.text_input -> fond clair
+   ================================ */
+
+/* Le bloc complet */
+div[data-testid="stTextInput"] > div{
+  background: rgba(255,255,255,0.92) !important; /* fond clair */
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.20) !important;
+}
+
+/* Input transparent pour laisser apparaître le fond */
+div[data-testid="stTextInput"] input{
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Placeholder un peu plus doux */
+div[data-testid="stTextInput"] input::placeholder{
+  color: rgba(0,0,0,0.45) !important;
+}
+
+/* Focus */
+div[data-testid="stTextInput"] > div:focus-within{
+  border: 1px solid var(--btn) !important;
+  box-shadow: 0 0 0 3px rgba(79,124,255,0.25) !important;
+}
+
+/* Wrapper principal du selectbox */
+div[data-testid="stSelectbox"] > div[data-baseweb="select"]{
+  background: rgba(20, 28, 45, 0.98) !important; /* fond très foncé */
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #ffffff !important;  /* texte clair */
+}
+
+/* Label du selectbox */
+div[data-testid="stSelectbox"] label{
+  color: #ffffff !important;  /* label très clair */
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+}
+
+/* Texte de l'option sélectionnée */
+div[data-testid="stSelectbox"] > div[data-baseweb="select"] div[class*="singleValue"]{
+  color: #ffffff !important;  /* texte sélectionné en blanc */
+  font-weight: 500 !important;
+}
+
+/* Menu déroulant */
+div[data-baseweb="menu"]{
+  background: rgba(12, 18, 32, 0.98) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Options du menu */
+div[data-baseweb="option"]{
+  color: #ffffff !important;  /* texte des options en blanc */
+  padding: 10px 12px !important;
+  border-radius: 10px !important;
+}
+
+/* Hover sur option */
+div[data-baseweb="option"]:hover{
+  background: rgba(79,124,255,0.22) !important;
+}
+
+/* Option sélectionnée */
+div[data-baseweb="option"][aria-selected="true"]{
+  background: rgba(79,124,255,0.35) !important;
+  color: #ffffff !important;  /* texte sélectionné très clair */
+  font-weight: 700 !important;
+}
+
+/* Flèche */
+div[data-testid="stSelectbox"] svg{
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+:root{
+  --bg: #0b1220;
+  --card: rgba(255,255,255,0.06);
+  --text: #ffffffc9;           /* texte principal très clair */
+  --muted: rgba(255,255,255,0.85); /* texte secondaire légèrement moins intense */
+  --line: rgba(234,240,255,0.15);
+  --btn: #4f7cff;
+  --btn-hover: #3b66ea;
+  --shadow: 0 12px 30px rgba(0,0,0,0.35);
+  --radius: 16px;
+}
+
+/* Fond */
+.stApp{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(79,124,255,0.25), transparent 60%),
+              radial-gradient(900px 500px at 80% 10%, rgba(0,255,180,0.12), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: var(--text) !important;
+}
+
+/* Texte */
+p, li, span, label {
+  color: var(--muted) !important;
+}
+
+/* Containers (cartes) */
+div[data-testid="stVerticalBlockBorderWrapper"]{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* File uploader */
+div[data-testid="stFileUploader"]{
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Boutons */
+.stButton > button, .stDownloadButton > button {
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.stButton > button:hover, .stDownloadButton > button:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+.stButton > button:active, .stDownloadButton > button:active{
+  transform: translateY(0px);
+}
+
+/* Séparateur */
+hr{
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 22px 0;
+}
+
+/* Enlève la barre blanche du haut (header Streamlit) */
+header[data-testid="stHeader"]{
+  background: transparent !important;
+}
+
+/* Enlève aussi la bordure/ombre du header */
+header[data-testid="stHeader"]::after{
+  background: transparent !important;
+}
+
+/* Optionnel : retire le padding du haut */
+.stApp{
+  padding-top: 0rem;
+}
+
+/* Bouton interne du file_uploader */
+div[data-testid="stFileUploader"] button{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+div[data-testid="stFileUploader"] button:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+div[data-testid="stFileUploader"] button:active{
+  transform: translateY(0px);
+}
+
+div[data-testid="stFileUploader"] * button{
+  background: var(--btn) !important;
+  color: white !important;
+}
+
+/* Bouton "Browse files" du file_uploader (Streamlit/BaseWeb) */
+div[data-testid="stFileUploader"] [role="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+}
+
+div[data-testid="stFileUploader"] [role="button"]:hover{
+  background: var(--btn-hover) !important;
+}
+
+div[data-testid="stFileUploader"] button[data-baseweb="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+div[data-testid="stFileUploader"] button[data-baseweb="button"]:hover{
+  background: var(--btn-hover) !important;
+}
+
+div[data-testid="stFileUploader"] label{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+}
+
+div[data-testid="stFileUploader"] label:hover{
+  background: var(--btn-hover) !important;
+}
+
+/* Texte du drag and drop */
+div[data-testid="stFileUploader"] .css-1t33j5u,  /* Classe variable selon version */
+div[data-testid="stFileUploader"] label span {
+    color: var(--muted) !important;
+    font-weight: 500;
+}
+
+/* Optionnel : modifier l’arrière-plan du drag/drop */
+div[data-testid="stFileUploader"] > div {
+    background: var(--card) !important;
+}
+
+div[data-testid="stFileUploader"] label span{
+    color: #eaf0ff !important;
+    font-size: 0.95rem;
+}
+
+div[data-testid="stFileUploader"] label::after {
+    color: var(--muted) !important;
+}
+
+/* Texte "Drag and drop file here / Limit 200MB..." */
+div[data-testid="stFileUploader"] label,
+div[data-testid="stFileUploader"] label span {
+    color: var(--muted) !important;  /* texte clair pour fond sombre */
+    font-weight: 500;
+}
+
+/* Optionnel : augmenter la taille pour plus de lisibilité */
+div[data-testid="stFileUploader"] label span {
+    font-size: 0.95rem !important;
+}
+
+/* Link buttons (st.link_button) */
+div[data-testid="stLinkButton"] a{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+div[data-testid="stLinkButton"] a:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+div[data-testid="stLinkButton"] a:active{
+  transform: translateY(0px);
+}
+
+/* ================================
+   FILE UPLOADER (st.file_uploader)
+   ================================ */
+
+/* Conteneur global */
+div[data-testid="stFileUploader"]{
+  background: var(--card) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Zone drag & drop */
+div[data-testid="stFileUploader"] section{
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px dashed rgba(255,255,255,0.18) !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+}
+
+/* Texte "Drag and drop file here" + limite */
+div[data-testid="stFileUploader"] section *{
+  color: var(--muted) !important;
+  font-weight: 500 !important;
+}
+
+/* Bouton Browse files / Parcourir */
+div[data-testid="stFileUploader"] button,
+div[data-testid="stFileUploader"] [role="button"]{
+  background: var(--btn) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+/* Hover bouton */
+div[data-testid="stFileUploader"] button:hover,
+div[data-testid="stFileUploader"] [role="button"]:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Active bouton */
+div[data-testid="stFileUploader"] button:active,
+div[data-testid="stFileUploader"] [role="button"]:active{
+  transform: translateY(0px);
+}
+
+/* Effet focus (quand on clique / tab) */
+div[data-testid="stFileUploader"] button:focus,
+div[data-testid="stFileUploader"] [role="button"]:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(79,124,255,0.35) !important;
+}
+
+/* Nom du fichier uploadé */
+div[data-testid="stFileUploader"] ul li{
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+
+/* Supprime le fond blanc parfois présent autour */
+div[data-testid="stFileUploader"] > div{
+  background: transparent !important;
+}
+
+/* ================================
+   st.text_input -> fond clair
+   ================================ */
+
+/* Le bloc complet */
+div[data-testid="stTextInput"] > div{
+  background: rgba(255,255,255,0.92) !important; /* fond clair */
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.20) !important;
+}
+
+/* Input transparent pour laisser apparaître le fond */
+div[data-testid="stTextInput"] input{
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Placeholder un peu plus doux */
+div[data-testid="stTextInput"] input::placeholder{
+  color: rgba(0,0,0,0.45) !important;
+}
+
+/* Focus */
+div[data-testid="stTextInput"] > div:focus-within{
+  border: 1px solid var(--btn) !important;
+  box-shadow: 0 0 0 3px rgba(79,124,255,0.25) !important;
+}
+
+div[data-testid="stTooltipHoverTarget"] > div{
+  background: rgba(255, 255, 255, 0.547) !important; /* fond clair */
+  color: rgba(0, 0, 0, 0.901) !important;
+  border-radius: 10px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.20) !important;
+}
+
+/* Fond pour le contenu de l'expander */
+div[data-testid="stExpander"] details {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* vert */
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* Quand l'expander est ouvert */
+div[data-testid="stExpander"] details[open] {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* bleu */
+}
+
+div[data-testid="stExpander"] details[open] summary {
+    background-color: rgba(255, 255, 255, 0.05) !important;  /* bleu un peu plus foncé */
+    color: white !important;
+}
