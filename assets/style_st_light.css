@@ -1,0 +1,53 @@
+:root{
+  --bg: #f6f8fc;                 /* fond clair légèrement bleuté */
+  --card: rgba(31, 37, 122, 0.028);      /* cartes très légères */
+  --text: #1f2937;                /* texte principal sombre */
+  --muted: rgba(31,41,55,0.75);   /* texte secondaire */
+  --line: rgba(0,0,0,0.08);       /* séparateurs */
+  --btn: #4f7bff30;                 /* même accent */
+  --btn-hover: #3b67ea30;
+  --shadow: 0 12px 30px rgba(0,0,0,0.08);
+  --radius: 16px;
+}
+
+/* Fond */
+.stApp{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(79,124,255,0.15), transparent 60%),
+              radial-gradient(900px 500px at 80% 10%, rgba(0,200,160,0.10), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Enlève la barre blanche du haut (header Streamlit) */
+header[data-testid="stHeader"]{
+  background: transparent !important;
+}
+
+/* Enlève aussi la bordure/ombre du header */
+header[data-testid="stHeader"]::after{
+  background: transparent !important;
+}
+
+/* Optionnel : retire le padding du haut */
+.stApp{
+  padding-top: 0rem;
+}
+
+
+/* Boutons */
+.stButton > button, .stDownloadButton > button {
+  background: var(--btn) !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.stButton > button:hover, .stDownloadButton > button:hover{
+  background: var(--btn-hover) !important;
+  transform: translateY(-1px);
+}
+.stButton > button:active, .stDownloadButton > button:active{
+  transform: translateY(0px);
+}
